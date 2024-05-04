@@ -2,8 +2,8 @@
   "name": "walletconnector",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/bundle.esm.js",
-  "module": "dist/bundle.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "type": "module",
   "scripts": {
     "build": "rollup -c rollup.config.mjs",

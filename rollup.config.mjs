@@ -24,5 +24,5 @@ export default {
     commonjs(),
     terser(), // Minifies the output
   ],
-  external: ["react", "react-dom"],
+  external: ["react", "react-dom","@walletconnect/ethereum-provider", "@walletconnect/modal", "ethers"],
 };
