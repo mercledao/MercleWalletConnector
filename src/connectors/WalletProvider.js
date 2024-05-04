@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import useInjectedConnector from "./InjectedConnector";
-import useWalletConnectConnector from "./WalletConnectConnector";
-import { enums, id } from "../constants";
-import walletContext from "./WalletContext";
+import useInjectedConnector from "./InjectedConnector.js";
+import useWalletConnectConnector from "./WalletConnectConnector.js";
+import { enums, id } from "../constants.js";
+import walletContext from "./WalletContext.js";
 
 const WalletProvider = ({ children, chains }) => {
   const [userAddress, _setUserAddress] = useState();

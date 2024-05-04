@@ -1,3 +1,5 @@
+export const WALLET_CONNECT_PROJECT_ID = "d8028ba5ebb41cbf8fd5593e26340994";
+
 export const rpc = {
   1: "https://eth-mainnet.g.alchemy.com/v2/vma47TKOLkZ-xH_XQh1tQFfLADEJiHQt",
   10: "https://opt-mainnet.g.alchemy.com/v2/vma47TKOLkZ-xH_XQh1tQFfLADEJiHQt",
@@ -22,4 +24,4 @@ export const id = {
   },
 };
 
-export default { rpc, enums, id };
+export default { WALLET_CONNECT_PROJECT_ID, rpc, enums, id };

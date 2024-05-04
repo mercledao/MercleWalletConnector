@@ -1,10 +1,8 @@
+import { useState } from "react";
 import { ethers } from "ethers";
 import { EthereumProvider } from "@walletconnect/ethereum-provider";
-import utils from "../utils";
-import { useState } from "react";
-import { rpc } from "../constants";
-
-const WALLET_CONNECT_PROJECT_ID = "d8028ba5ebb41cbf8fd5593e26340994";
+import { WALLET_CONNECT_PROJECT_ID, rpc } from "../constants.js";
+import utils from "../utils.js";
 
 export const useWalletConnectConnector = ({ chains, chainId, provider, setUserAddress, setChainId, setProvider }) => {
   const [ethProvider, setEthProvider] = useState();

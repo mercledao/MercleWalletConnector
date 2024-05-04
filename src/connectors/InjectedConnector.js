@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-import utils from "../utils";
+import utils from "../utils.js";
 
 export const useInjectedConnector = ({ chains, chainId, provider, setUserAddress, setChainId, setProvider }) => {
   const connect = async ({ invasive = false } = {}) => {
