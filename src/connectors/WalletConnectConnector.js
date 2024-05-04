@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { ethers } from "ethers";
 import { EthereumProvider } from "@walletconnect/ethereum-provider";
 import { WALLET_CONNECT_PROJECT_ID, rpc } from "../constants.js";
