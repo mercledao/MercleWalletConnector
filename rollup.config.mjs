@@ -11,7 +11,7 @@ export default {
     dir: "dist",
     format: "esm",
     exports: "auto",
-    sourcemap: false,
+    sourcemap: true,
   },
   plugins: [
     peerDepsExternal(),
@@ -24,5 +24,5 @@ export default {
     commonjs(),
     terser(), // Minifies the output
   ],
-  external: ["react", "react-dom","@walletconnect/ethereum-provider", "@walletconnect/modal", "ethers"],
+  external: ["react", "react-dom", "@walletconnect/ethereum-provider", "@walletconnect/modal", "ethers"],
 };
