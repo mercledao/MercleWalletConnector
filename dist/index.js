@@ -23,12 +23,24 @@ const useInjectedConnector = ({
     console.log("connectInjected");
     const web3Provider = new ethers.BrowserProvider(window.ethereum);
     if (web3Provider) {
-      window.ethereum.on("chainChanged", _newChainId => {
-        const newChainId = parseInt(_newChainId);
-        console.log(`Network changed to ${newChainId}`);
-        setChainId(newChainId);
+      window.ethereum.on("chainChanged", async _newChainId => {
+        try {
+          await new Promise(async (res, rej) => {
+            try {
+              const p = new ethers.BrowserProvider(window.ethereum);
+              await p.getSigner();
+              setProvider(p);
+              setChainId(parseInt((await p.getNetwork()).chainId));
+              res(true);
+            } catch (e) {
+              rej(e);
+            }
+          });
+        } catch (e) {
+          console.error(e);
+        }
       });
-      window.ethereum.on("accountsChanged", accounts => {
+      window.ethereum.on("accountsChanged", async accounts => {
         console.log(`Account changed to ${accounts?.[0]}`);
         if (!accounts?.length) {
           disconnect({
@@ -36,7 +48,21 @@ const useInjectedConnector = ({
           }).catch(e => {});
           return;
         }
-        setUserAddress(ethers.getAddress(accounts[0]));
+        try {
+          await new Promise(async (res, rej) => {
+            try {
+              const p = new ethers.BrowserProvider(window.ethereum);
+              await p.getSigner();
+              setProvider(p);
+              setUserAddress(ethers.getAddress(accounts[0]));
+              res(true);
+            } catch (e) {
+              rej(e);
+            }
+          });
+        } catch (e) {
+          console.error(e);
+        }
       });
 
       // In ethers v6, the `enable()` method (from Web3Modal or similar) might be needed to initially trigger account access:
@@ -56,6 +82,17 @@ const useInjectedConnector = ({
       await provider.send("wallet_switchEthereumChain", [{
         chainId: utils.hexValue(parseInt(_chainId))
       }]);
+      await new Promise(async (res, rej) => {
+        try {
+          const p = new ethers.BrowserProvider(window.ethereum);
+          await p.getSigner();
+          setProvider(p);
+          setChainId((await p.getNetwork()).chainId);
+          res(true);
+        } catch (e) {
+          rej(e);
+        }
+      });
     } catch (e) {
       console.error(e.code);
       if (e.code == 4902 || e.message.includes("4902")) {
