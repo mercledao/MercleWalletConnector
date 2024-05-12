@@ -16,6 +16,7 @@ export const useInjectedConnector = ({ chains, chainId, provider, setUserAddress
               await p.getSigner();
               setProvider(p);
               setChainId(parseInt((await p.getNetwork()).chainId));
+              console.log("Network Changed to ", parseInt((await p.getNetwork()).chainId));
               res(true);
             } catch (e) {
               rej(e);
@@ -74,7 +75,8 @@ export const useInjectedConnector = ({ chains, chainId, provider, setUserAddress
           const p = new ethers.BrowserProvider(window.ethereum);
           await p.getSigner();
           setProvider(p);
-          setChainId((await p.getNetwork()).chainId);
+          setChainId(parseInt((await p.getNetwork()).chainId));
+          console.log("Network Changed to ", parseInt((await p.getNetwork()).chainId));
           res(true);
         } catch (e) {
           rej(e);
