@@ -85,7 +85,7 @@ export const arbitrumGoerli = {
   testnet: true,
 };
 
-export const arbitrumSepolia ={
+export const arbitrumSepolia = {
   id: 421614,
   name: "Arbitrum Sepolia",
   network: "arbitrum-sepolia",
@@ -2249,10 +2249,14 @@ export const skaleCalypsoTestnet = {
   },
   rpcUrls: {
     default: {
-      http: ["https://staging-v3.skalenodes.com/v1/staging-utter-unripe-menkar"],
+      http: [
+        "https://staging-v3.skalenodes.com/v1/staging-utter-unripe-menkar",
+      ],
     },
     public: {
-      http: ["https://staging-v3.skalenodes.com/v1/staging-utter-unripe-menkar"],
+      http: [
+        "https://staging-v3.skalenodes.com/v1/staging-utter-unripe-menkar",
+      ],
     },
   },
   blockExplorers: {
@@ -2280,10 +2284,14 @@ export const skaleChaosTestnet = {
   },
   rpcUrls: {
     default: {
-      http: ["https://staging-v3.skalenodes.com/v1/staging-fast-active-bellatrix"],
+      http: [
+        "https://staging-v3.skalenodes.com/v1/staging-fast-active-bellatrix",
+      ],
     },
     public: {
-      http: ["https://staging-v3.skalenodes.com/v1/staging-fast-active-bellatrix"],
+      http: [
+        "https://staging-v3.skalenodes.com/v1/staging-fast-active-bellatrix",
+      ],
     },
   },
   blockExplorers: {
@@ -2613,10 +2621,14 @@ export const skaleTitanTestnet = {
   },
   rpcUrls: {
     default: {
-      http: ["https://staging-v3.skalenodes.com/v1/staging-aware-chief-gianfar"],
+      http: [
+        "https://staging-v3.skalenodes.com/v1/staging-aware-chief-gianfar",
+      ],
     },
     public: {
-      http: ["https://staging-v3.skalenodes.com/v1/staging-aware-chief-gianfar"],
+      http: [
+        "https://staging-v3.skalenodes.com/v1/staging-aware-chief-gianfar",
+      ],
     },
   },
   blockExplorers: {
@@ -2860,10 +2872,16 @@ export const wanchain = {
   },
   rpcUrls: {
     default: {
-      http: ["https://gwan-ssl.wandevs.org:56891", "https://gwan2-ssl.wandevs.org"],
+      http: [
+        "https://gwan-ssl.wandevs.org:56891",
+        "https://gwan2-ssl.wandevs.org",
+      ],
     },
     public: {
-      http: ["https://gwan-ssl.wandevs.org:56891", "https://gwan2-ssl.wandevs.org"],
+      http: [
+        "https://gwan-ssl.wandevs.org:56891",
+        "https://gwan2-ssl.wandevs.org",
+      ],
     },
   },
   blockExplorers: {
@@ -3103,6 +3121,27 @@ export const manta = {
     },
   },
 };
+export const morph = {
+  id: 2810,
+  name: "Morph Holesky Testnet",
+  network: "Morph",
+  nativeCurrency: {
+    name: "Ether",
+    symbol: "ETH",
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc-quicknode-holesky.morphl2.io"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Morph Holesky Explorer",
+      url: "https://explorer-holesky.morphl2.io",
+    },
+  },
+};
 
 export default {
   arbitrum,
@@ -3203,4 +3242,5 @@ export default {
   zkSync,
   zkSyncTestnet,
   manta,
+  morph
 };
