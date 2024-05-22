@@ -3103,6 +3103,33 @@ export const manta = {
     },
   },
 };
+export const zklink = {
+  id: 810180,
+  name: "zklink",
+  network: "zklink",
+  nativeCurrency: {
+    name: "Ether",
+    symbol: "ETH",
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc.zklink.io"],
+      webSocket: ["wss://rpc.zklink.io"],
+    },
+    public: {
+      http: ["https://rpc.zklink.io"],
+      webSocket: ["wss://rpc.zklink.io"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Zklink Nova Explorer",
+      url: "https://explorer.zklink.io/",
+    },
+  },
+};
+
 
 export default {
   arbitrum,
@@ -3203,4 +3230,5 @@ export default {
   zkSync,
   zkSyncTestnet,
   manta,
+  zklink
 };

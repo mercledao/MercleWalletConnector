@@ -9,6 +9,7 @@ export const rpc = {
   43114: "https://avalanche-mainnet.infura.io/v3/551b04b59b124e308a08ba3098033d7c",
   1559: "https://rpc.tenet.org",
   155: "https://rpc.testnet.tenet.org",
+  810180:"https://rpc.zklink.io"
 };
 
 export const enums = {
