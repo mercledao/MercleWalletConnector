@@ -157,7 +157,8 @@ const rpc = {
   42161: "https://arb-mainnet.g.alchemy.com/v2/vma47TKOLkZ-xH_XQh1tQFfLADEJiHQt",
   43114: "https://avalanche-mainnet.infura.io/v3/551b04b59b124e308a08ba3098033d7c",
   1559: "https://rpc.tenet.org",
-  155: "https://rpc.testnet.tenet.org"
+  155: "https://rpc.testnet.tenet.org",
+  810180: "https://rpc.zklink.io"
 };
 const enums = {
   ConnectorTypes: {
@@ -3425,6 +3426,32 @@ const manta = {
     }
   }
 };
+const zklink = {
+  id: 810180,
+  name: "zklink",
+  network: "zklink",
+  nativeCurrency: {
+    name: "Ether",
+    symbol: "ETH",
+    decimals: 18
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc.zklink.io"],
+      webSocket: ["wss://rpc.zklink.io"]
+    },
+    public: {
+      http: ["https://rpc.zklink.io"],
+      webSocket: ["wss://rpc.zklink.io"]
+    }
+  },
+  blockExplorers: {
+    default: {
+      name: "Zklink Nova Explorer",
+      url: "https://explorer.zklink.io/"
+    }
+  }
+};
 var chains = {
   arbitrum,
   arbitrumGoerli,
@@ -3523,7 +3550,8 @@ var chains = {
   zhejiang,
   zkSync,
   zkSyncTestnet,
-  manta
+  manta,
+  zklink
 };
 
 export { WalletProvider, chains, constants, walletContext };
