@@ -3230,4 +3230,5 @@ export default {
   zkSync,
   zkSyncTestnet,
   manta,
+  zklink
 };
